@@ -1,0 +1,16 @@
+# Visual Studio Code
+.vscode
+
+# NodeJS related
+node_modules
+
+# Database related
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.s3db
+*.sl3
+
+# Secrets
+.env
