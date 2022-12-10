@@ -1,12 +1,16 @@
 // Load server configuration and environment variables
 const config = require('./config');
 const dotenv = require('dotenv');
+
 dotenv.config();
 
 // Setup Express application
 const express = require('express');
 const app = express();
+
+app.set('view engine', 'ejs');
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(require('./routes'));
 
 (async () => {

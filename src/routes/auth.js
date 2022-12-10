@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/code', (req, res) => {
-  res.end('GET /auth/code');
-});
+const AuthController = require('../controllers/auth');
 
-router.post('/token', (req, res) => {
-  res.end('POST /auth/token');
-});
+router.get('/code', AuthController.getCode);
+router.post('/token', AuthController.getToken);
+router.post('/refresh', AuthController.refreshToken); // TODO: auth middleware
 
 module.exports = router;

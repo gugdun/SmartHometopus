@@ -16,7 +16,8 @@
     "jsonwebtoken": "^8.5.1",
     "sequelize": "^6.26.0",
     "sqlite3": "^5.1.2",
-    "udp-discovery": "^2.0.2"
+    "udp-discovery": "^2.0.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

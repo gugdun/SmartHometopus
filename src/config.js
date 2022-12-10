@@ -13,8 +13,12 @@ module.exports = {
         clientId: 'a70f16e38d9d4e18bcce2927a31483b9'
       }
     ],
+    code: {
+      expiresIn: 300 // 5 minutes
+    },
     token: {
-      expiresIn: '30d'
+      accessExpiresIn: 86400,   // 1 day
+      refreshExpiresIn: 2592000 // 30 days
     }
   }
 };
