@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken');
+const config = require('../config');
 
 function authenticate(checkExp, req, res, next) {
-  console.info('AuthMiddleware');
-
   const authorization = req.headers.authorization;
   if (!authorization || typeof authorization !== 'string' || authorization.indexOf(' ') < 1) {
     return invalidClientResponse(res);

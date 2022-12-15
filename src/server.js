@@ -20,6 +20,15 @@ app.use(require('./routes'));
     await db.authenticate();
     console.info('Database connection has been established successfully 💃');
 
+    // Sync database models
+    await require('./models/code').sync();
+    await require('./models/device').sync();
+    await require('./models/function').sync();
+    await require('./models/parameter').sync();
+
+    // Init device discovery
+    require('./services/discovery').initialize();
+
     // Start listening on specified port and host address
     const server = app.listen(config.server.port, config.server.host, () => {
       console.info(`Listening on ${server.address().address}:${server.address().port} 👂`);

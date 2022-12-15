@@ -1,23 +1,24 @@
 const { DataTypes } = require('sequelize');
 const db = require('../services/db');
 
-const Code = db.define('Code', {
-  code: {
-    type: DataTypes.STRING,
-    primaryKey: true
-  },
-  clientId: {
+const Function = require('./function');
+
+const Device = db.define('Device', {
+  name: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  redirectUri: {
+  description: {
     type: DataTypes.STRING,
     allowNull: true
   },
-  expiresIn: {
-    type: DataTypes.DATE,
+  ip: {
+    type: DataTypes.STRING,
     allowNull: false
   }
 });
 
-module.exports = Code;
+Function.belongsTo(Device);
+Device.hasMany(Function);
+
+module.exports = Device;
